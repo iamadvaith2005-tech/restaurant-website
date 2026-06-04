@@ -361,7 +361,6 @@ body {
 .feature-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 2rem;
     border-radius: 12px;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
@@ -385,10 +384,30 @@ body {
     background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: 10;
 }
 
 .feature-card:hover::before {
     opacity: 1;
+}
+
+/* Feature Image Container */
+.feature-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.feature-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-image {
+    transform: scale(1.05);
 }
 
 .feature-header {
@@ -396,6 +415,7 @@ body {
     align-items: flex-start;
     gap: 1rem;
     margin-bottom: 1.5rem;
+    padding: 2rem 2rem 0 2rem;
 }
 
 .feature-icon {
@@ -420,136 +440,7 @@ body {
 .feature-description {
     color: var(--text-gray);
     line-height: 1.8;
-    margin-bottom: 2rem;
-}
-
-.feature-visual {
-    height: 150px;
-    background: linear-gradient(135deg, rgba(196, 255, 92, 0.05), rgba(157, 211, 61, 0.05));
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Visual Elements */
-.visual-elements {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 1rem;
-    height: 100%;
-}
-
-.element {
-    width: 20px;
-    background: linear-gradient(180deg, var(--accent-color), var(--accent-dark));
-    border-radius: 4px;
-    opacity: 0.8;
-}
-
-.element-1 {
-    height: 40%;
-}
-
-.element-2 {
-    height: 70%;
-}
-
-.element-3 {
-    height: 50%;
-}
-
-/* Chart */
-.chart {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 0.5rem;
-    height: 100%;
-    width: 100%;
-    position: relative;
-}
-
-.chart-bar {
-    width: 15%;
-    background: linear-gradient(180deg, var(--accent-color), var(--accent-dark));
-    border-radius: 4px;
-    opacity: 0.7;
-    position: relative;
-}
-
-.chart-bar::after {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
-    height: 6px;
-    background: var(--accent-color);
-    border-radius: 50%;
-}
-
-.bar-1 {
-    height: 40%;
-}
-
-.bar-2 {
-    height: 65%;
-}
-
-.bar-3 {
-    height: 55%;
-}
-
-.bar-4 {
-    height: 75%;
-}
-
-/* Radar */
-.radar {
-    position: relative;
-    width: 120px;
-    height: 120px;
-    margin: 0 auto;
-}
-
-.radar-circle {
-    position: absolute;
-    border: 1px solid rgba(196, 255, 92, 0.3);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.circle-1 {
-    width: 60px;
-    height: 60px;
-}
-
-.circle-2 {
-    width: 90px;
-    height: 90px;
-}
-
-.circle-3 {
-    width: 120px;
-    height: 120px;
-}
-
-.radar-point {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
-    border-radius: 50%;
-    top: 20%;
-    right: 20%;
-    box-shadow: 0 0 20px rgba(196, 255, 92, 0.5);
+    padding: 0 2rem 2rem 2rem;
 }
 
 /* Menu Section */
@@ -567,11 +458,11 @@ body {
 .menu-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    padding: 2rem;
     border-radius: 12px;
     text-align: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    overflow: hidden;
 }
 
 .menu-card:hover {
@@ -579,26 +470,49 @@ body {
     transform: translateY(-5px);
 }
 
+/* Menu Image Container */
+.menu-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.menu-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover .menu-image {
+    transform: scale(1.05);
+}
+
 .menu-icon {
     font-size: 2.5rem;
     color: var(--accent-color);
-    margin-bottom: 1rem;
+    margin: 1.5rem 0 0 0;
+    padding: 0 2rem;
 }
 
 .menu-card h3 {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin: 1rem 0 0.5rem 0;
+    padding: 0 2rem;
 }
 
 .menu-card p {
     color: var(--text-gray);
     margin-bottom: 1rem;
+    padding: 0 2rem;
 }
 
 .price {
     font-size: 1.5rem;
     color: var(--accent-color);
     font-weight: 700;
+    padding: 0 2rem 2rem 2rem;
 }
 
 /* Contact Section */
